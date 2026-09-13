@@ -109,6 +109,13 @@ public class EcosistemaScript : MonoBehaviour
         void SimulationDay()
         {
             if (actualConejos <= 0 || actualZorros <= 0) return; // si ambas poblaciones llega a 0, se corta la ejecucion y regresa, NO HACE NADA, SOLO TERMINA LA SIMULACION
+
+            // ------------------------------------------------------------------------------------------------------------------------------------------//
+            // NOTA
+            // el RETURN, corta la ejecucion de la funcion actual, en este caso la funcion local SimulationDay(), si pusieramos todo este codigo dentro del if en el metodo Update(), el RETURN corta ESE metodo Update(), por lo que, no se aumentaria los dias de la simulacion, lo que haria que no se actualizara ningun cambio.
+
+            // ------------------------------------------------------------------------------------------------------------------------------------------//
+
             day++; // si no, pasamos al siguiente dia
 
             // reproduccion de los conejos
